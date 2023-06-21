@@ -12,7 +12,7 @@ export const Modal = ({src, closeModal}) => {
         return () => {
             document.removeEventListener("keydown", onEscPress);
           };
-      }, [])
+      }, [closeModal])
     
     const onEscPress = evt => {
         if( evt.code === 'Escape' ) {
