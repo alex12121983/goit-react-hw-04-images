@@ -1,24 +1,26 @@
-import { useEffect } from "react";
-import propTypes from 'prop-types';
+import { useEffect } from "react"
+import propTypes from 'prop-types'
 import {
     ModalOverlay,
     ModalWindow,
     ModalImg
-  } from './Modal.styled';
+  } from './Modal.styled'
 
 export const Modal = ({src, closeModal}) => {
     useEffect(() => {
+        const onEscPress = evt => {
+            if( evt.code === 'Escape' ) {
+                closeModal()
+            }
+        } 
+
         window.addEventListener('keydown', onEscPress)
         return () => {
             document.removeEventListener("keydown", onEscPress);
-          };
-      }, [onEscPress])
+          }
+      }, [closeModal])
     
-    const onEscPress = evt => {
-        if( evt.code === 'Escape' ) {
-            closeModal()
-        }
-    }
+    
     const onBackClick = evt => {
         if ( evt.currentTarget === evt.target ) {
             closeModal()
