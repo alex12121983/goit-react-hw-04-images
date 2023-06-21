@@ -18,27 +18,6 @@ export const ImageGallery = ({images, openModal}) => {
     )
 }
 
-// class ImageGallery extends Component {
-
-//     render(){
-//         const {images, openModal} = this.props
-//         return(
-//                 <List>
-//                     {images.map(el => (
-//                         <ImageGalleryItem 
-//                             key={el.id}
-//                             smallImgSrc={el.webformatURL}
-//                             largeImgSrc={el.largeImageURL}
-//                             openModal={openModal}
-//                         />
-//                     ))}
-//                 </List>
-//             )
-//     }
-// }
-
-// export default ImageGallery
-
 ImageGallery.propTypes = {
     images: PropTypes.arrayOf(PropTypes.object).isRequired,
     openModal: PropTypes.func.isRequired,

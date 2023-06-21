@@ -14,7 +14,6 @@ export const Searchbar = ({handleSearch}) => {
 
     const handleChange = ({ target: { value } }) => {
         setValue(value)
-        // this.setState({ value })
     }
 
     const handleSubmit = (evt) => {
@@ -26,7 +25,6 @@ export const Searchbar = ({handleSearch}) => {
           }
         handleSearch(value)
         setValue('')
-        // this.setState({ value: '' });
     }
 
     return (
@@ -53,51 +51,6 @@ export const Searchbar = ({handleSearch}) => {
     )
 }
 
-// class Searchbar extends Component {
-//     state = {
-//         value: '',
-//     }
-//     handleChange = ({ target: { value } }) => {
-//         this.setState({ value })
-//     }
-//     handleSubmit = (evt) => {
-//         evt.preventDefault()
-//         if (this.state.value.trim() === '') {
-//             return Notiflix.Notify.warning(
-//               'Please enter key words for search.',
-//             );
-//           }
-//         this.props.handleSearch(this.state.value)
-//         this.setState({ value: '' });
-//     }
-//     render(){
-//         return (
-//             <>
-//                 <Header>
-//                     <SearchForm onSubmit={this.handleSubmit}>
-//                         <SearchFormButton type="submit">
-//                             <SearchFormButtonLabel>
-//                                 Search
-//                             </SearchFormButtonLabel>
-//                         </SearchFormButton>
-//                         <SearchFormInput
-//                             className="input"
-//                             type="text"
-//                             autoComplete="off"
-//                             autoFocus
-//                             placeholder="Search images and photos"
-//                             onChange={this.handleChange}
-//                             value={this.state.value}
-//                         />
-//                     </SearchForm>
-//                 </Header>
-//             </>
-//         )
-//     }
-// }
-
-// export default Searchbar
-
 Searchbar.propTypes = {
-    handleSubmit: PropTypes.func.isRequired,
+    handleSearch: PropTypes.func.isRequired,
   };
