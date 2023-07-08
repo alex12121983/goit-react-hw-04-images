@@ -21,9 +21,9 @@ export const ImageGallery = ({images, openModal}) => {
 ImageGallery.propTypes = {
     images: PropTypes.arrayOf(
         PropTypes.object({
-            id: PropTypes.string.isRequired,
             smallImgSrc: PropTypes.string.isRequired,
             largeImgSrc: PropTypes.string.isRequired,
+            id: PropTypes.string.isRequired,
         }).isRequired
     ),
     openModal: PropTypes.func.isRequired,
